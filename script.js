@@ -15,6 +15,7 @@ function searchProducts() {
   });
 }
 
+
 // Add search on Enter key
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
@@ -23,8 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 // Get existing cart from localStorage or create new one
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
 
 // Update cart counter display
 function updateCartCount() {
@@ -35,168 +38,178 @@ function updateCartCount() {
 }
 updateCartCount();
 
+
 // Quick Add to Cart button (without size selection)
-document.querySelectorAll('.add-cart-btn').forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.stopPropagation();
-    const productCard = event.target.closest('.product-card');
-    const product = {
-      title: productCard.querySelector('.product-title').textContent,
-      price: productCard.querySelector('.product-price').textContent,
-      image: productCard.querySelector('img').src,
-      size: 'Free Size',
-      quantity: 1
-    };
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert(`${product.title} added to cart!`);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.add-cart-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const productCard = event.target.closest('.product-card');
+      const product = {
+        title: productCard.querySelector('.product-title').textContent,
+        price: productCard.querySelector('.product-price').textContent,
+        image: productCard.querySelector('img').src,
+        size: 'Free Size',
+        quantity: 1
+      };
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.title} added to cart!`);
+    });
   });
 });
+
 
 // === PRODUCT MODAL LOGIC WITH SIZE SELECTION ===
-const modal = document.getElementById('productModal');
-const modalImg = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalPrice = document.getElementById('modalPrice');
-const modalStock = document.getElementById('modalStock');
-const modalDesc = document.getElementById('modalDesc');
-const sizeButtonsContainer = document.getElementById('sizeButtons');
-const modalAddToCart = document.getElementById('modalAddToCart');
-const modalBuyNow = document.getElementById('modalBuyNow');
-const closeBtn = document.querySelector('.close-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('productModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalStock = document.getElementById('modalStock');
+  const modalDesc = document.getElementById('modalDesc');
+  const sizeButtonsContainer = document.getElementById('sizeButtons');
+  const modalAddToCart = document.getElementById('modalAddToCart');
+  const modalBuyNow = document.getElementById('modalBuyNow');
+  const closeBtn = document.querySelector('#productModal .close-btn');
 
-let currentImages = [];
-let currentIndex = 0;
-let selectedSize = null;
-let currentProduct = null;
 
-// Example product-specific images
-const productImages = {
-  "AFEEC Signature Hoodie": [
-    "https://via.placeholder.com/400x400?text=Hoodie+Front",
-    "https://via.placeholder.com/400x400?text=Hoodie+Model"
-  ],
-  "AFEEC Classic Tee": [
-    "https://via.placeholder.com/400x400?text=Tee+Front",
-    "https://via.placeholder.com/400x400?text=Tee+Model"
-  ]
-};
+  let currentImages = [];
+  let currentIndex = 0;
+  let selectedSize = null;
+  let currentProduct = null;
 
-// Open modal when product IMAGE is clicked
-document.querySelectorAll('.product-card img').forEach(img => {
-  img.addEventListener('click', e => {
-    const card = e.target.closest('.product-card');
-    const title = card.querySelector('.product-title').textContent;
-    const price = card.querySelector('.product-price').textContent;
-    const stock = card.querySelector('.product-stock')?.textContent || 'In stock';
-    const desc = card.querySelector('.product-desc')?.textContent || 'High-quality product from Affectious Closet.';
-    const category = card.dataset.category;
+  // Example product-specific images
+  const productImages = {
+    "AFEEC Signature Hoodie": [
+      "https://via.placeholder.com/400x400?text=Hoodie+Front",
+      "https://via.placeholder.com/400x400?text=Hoodie+Model"
+    ],
+    "AFEEC Classic Tee": [
+      "https://via.placeholder.com/400x400?text=Tee+Front",
+      "https://via.placeholder.com/400x400?text=Tee+Model"
+    ]
+  };
 
-    currentImages = productImages[title] || [img.src];
-    currentIndex = 0;
-    modalImg.src = currentImages[currentIndex];
+  // Open modal when product IMAGE is clicked
+  document.querySelectorAll('.product-card img').forEach(img => {
+    img.addEventListener('click', e => {
+      const card = e.target.closest('.product-card');
+      const title = card.querySelector('.product-title').textContent;
+      const price = card.querySelector('.product-price').textContent;
+      const stock = card.querySelector('.product-stock')?.textContent || 'In stock';
+      const desc = card.querySelector('.product-desc')?.textContent || 'High-quality product from Affectious Closet.';
+      const category = card.dataset.category;
 
-    modalTitle.textContent = title;
-    modalPrice.textContent = price;
-    modalStock.textContent = stock;
-    modalDesc.textContent = desc;
-    selectedSize = null;
+      currentImages = productImages[title] || [img.src];
+      currentIndex = 0;
+      modalImg.src = currentImages[currentIndex];
 
-    // CREATE SIZE BUTTONS based on category
-    sizeButtonsContainer.innerHTML = '';
-    let sizes = [];
-    if (category === 'hoodie' || category === 'tshirt') {
-      sizes = ['S','M','L','XL','XXL'];
-    } else if (category === 'shoes') {
-      sizes = ['6','7','8','9','10'];
-    } else if (category === 'socks') {
-      sizes = ['1 Pair','2 Pairs','3 Pairs'];
-    } else {
-      sizes = ['Free Size'];
-    }
+      modalTitle.textContent = title;
+      modalPrice.textContent = price;
+      modalStock.textContent = stock;
+      modalDesc.textContent = desc;
+      selectedSize = null;
 
-    sizes.forEach(size => {
-      const btn = document.createElement('button');
-      btn.textContent = size;
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.size-buttons button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedSize = size;
+      // CREATE SIZE BUTTONS based on category
+      sizeButtonsContainer.innerHTML = '';
+      let sizes = [];
+      if (category === 'hoodie' || category === 'tshirt') {
+        sizes = ['S','M','L','XL','XXL'];
+      } else if (category === 'shoes') {
+        sizes = ['6','7','8','9','10'];
+      } else if (category === 'socks') {
+        sizes = ['1 Pair','2 Pairs','3 Pairs'];
+      } else {
+        sizes = ['Free Size'];
+      }
+
+      sizes.forEach(size => {
+        const btn = document.createElement('button');
+        btn.textContent = size;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.size-buttons button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSize = size;
+        });
+        sizeButtonsContainer.appendChild(btn);
       });
-      sizeButtonsContainer.appendChild(btn);
+
+      currentProduct = { title, price, category, stock, desc };
+      modal.style.display = 'flex';
     });
-
-    currentProduct = { title, price, category, stock, desc };
-    modal.style.display = 'flex';
   });
+
+  // Close modal
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  // Image carousel arrows
+  const leftArrow = document.querySelector('.arrow-box.left');
+  const rightArrow = document.querySelector('.arrow-box.right');
+
+  if (leftArrow) {
+    leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      modalImg.src = currentImages[currentIndex];
+    });
+  }
+
+  if (rightArrow) {
+    rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      modalImg.src = currentImages[currentIndex];
+    });
+  }
+
+  // Add to cart from modal (WITH SIZE REQUIRED)
+  if (modalAddToCart) {
+    modalAddToCart.addEventListener('click', () => {
+      if (!selectedSize) {
+        alert('Please select a size first.');
+        return;
+      }
+      const product = { 
+        ...currentProduct, 
+        size: selectedSize, 
+        image: currentImages[0],
+        quantity: 1
+      };
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.title} (${product.size}) added to cart!`);
+      modal.style.display = 'none';
+    });
+  }
+
+  // Buy now from modal
+  if (modalBuyNow) {
+    modalBuyNow.addEventListener('click', () => {
+      if (!selectedSize) {
+        alert('Please select a size first.');
+        return;
+      }
+      const product = { 
+        ...currentProduct, 
+        size: selectedSize, 
+        image: currentImages[0],
+        quantity: 1
+      };
+      localStorage.setItem('cart', JSON.stringify([product]));
+      window.location.href = 'cart.html';
+    });
+  }
 });
 
-// Close modal
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => modal.style.display = 'none');
-}
-
-window.addEventListener('click', e => {
-  if (e.target === modal) modal.style.display = 'none';
-});
-
-// Image carousel arrows
-const leftArrow = document.querySelector('.arrow-box.left');
-const rightArrow = document.querySelector('.arrow-box.right');
-
-if (leftArrow) {
-  leftArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    modalImg.src = currentImages[currentIndex];
-  });
-}
-
-if (rightArrow) {
-  rightArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    modalImg.src = currentImages[currentIndex];
-  });
-}
-
-// Add to cart from modal (WITH SIZE REQUIRED)
-if (modalAddToCart) {
-  modalAddToCart.addEventListener('click', () => {
-    if (!selectedSize) {
-      alert('Please select a size first.');
-      return;
-    }
-    const product = { 
-      ...currentProduct, 
-      size: selectedSize, 
-      image: currentImages[0],
-      quantity: 1
-    };
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert(`${product.title} (${product.size}) added to cart!`);
-    modal.style.display = 'none';
-  });
-}
-
-// Buy now from modal
-if (modalBuyNow) {
-  modalBuyNow.addEventListener('click', () => {
-    if (!selectedSize) {
-      alert('Please select a size first.');
-      return;
-    }
-    const product = { 
-      ...currentProduct, 
-      size: selectedSize, 
-      image: currentImages[0],
-      quantity: 1
-    };
-    localStorage.setItem('cart', JSON.stringify([product]));
-    window.location.href = 'cart.html';
-  });
-}
 
 // --------------------- LOGIN FUNCTIONALITY (FIXED) ---------------------
 function checkLoginStatus() {
@@ -210,6 +223,7 @@ function checkLoginStatus() {
     loginBtn.title = `Logged in as ${userName}`;
   }
 }
+
 
 // Multi-step form handler - FIXED
 function nextStep(event) {
@@ -243,6 +257,7 @@ function nextStep(event) {
   }
   return false;
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   checkLoginStatus();
@@ -281,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 function logout() {
   localStorage.removeItem('isLoggedIn');
   localStorage.removeItem('userName');
@@ -290,21 +306,23 @@ function logout() {
   window.location.href = 'index.html';
 }
 
+
 // --------------------- CATEGORY FILTER ---------------------
-document.querySelectorAll('.category-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const category = this.getAttribute('data-category');
-    
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    
-    document.querySelectorAll('.product-card').forEach(card => {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
 });
-
