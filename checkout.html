@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Affectious Closet</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+ <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+ <!-- NAVBAR -->
+ <nav>
+  <img src="images/logoafeec.png" class="logo-img" alt="Affectious Logo">
+  <div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="#">Contact</a>
+</div>
+
+  <div class="icons">
+    <label for="search-toggle"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-toggle">
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+    </div>
+    <i class="fas fa-user" id="loginBtn"></i>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</nav>
+
+
+<section class="checkout-container">
+  <h2>Checkout</h2>
+
+  <form id="checkoutForm">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="fullname" required placeholder="Enter your full name">
+    </div>
+
+    <div class="form-group">
+      <label>Contact Number</label>
+      <input type="tel" id="contact" required placeholder="09XXXXXXXXX" pattern="[0-9]{11}">
+    </div>
+
+    <div class="form-group">
+      <label>Street Address / House No.</label>
+      <input type="text" id="address" required placeholder="e.g., 123 Main Street, Bldg 5">
+    </div>
+
+    <div class="form-group">
+      <label>Barangay</label>
+      <input type="text" id="barangay" required placeholder="Enter barangay">
+    </div>
+
+    <div class="form-group">
+      <label>City / Municipality</label>
+      <input type="text" id="city" required placeholder="Enter city">
+    </div>
+
+    <div class="form-group">
+      <label>Province</label>
+      <input type="text" id="province" required placeholder="Enter province">
+    </div>
+
+    <div class="form-group">
+      <label>Postal / Zip Code</label>
+      <input type="text" id="zipcode" required placeholder="e.g., 1000" pattern="[0-9]{4}">
+    </div>
+
+    <div class="form-group">
+      <label>Payment Method</label>
+      <div class="payment-options">
+        <label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label>
+        <label><input type="radio" name="payment" value="Card"> Card</label>
+      </div>
+    </div>
+
+    <div class="form-group card-info" style="display: none;">
+      <label>Card Number</label>
+      <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" maxlength="19">
+    </div>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ul id="orderItems"></ul>
+      <p class="total">Total: ₱<span id="orderTotal">0.00</span></p>
+    </div>
+
+    <button type="submit" class="confirm-btn">Confirm Order</button>
+  </form>
+
+  <div id="thankYou" class="thank-you" style="display: none;">
+    <h2>Thank you for purchasing our product!</h2>
+    <p>Your order will be processed and delivered soon.</p>
+    <button onclick="window.location.href='shop.html'">Back to Shop</button>
+  </div>
+</section>
+
+  <!-- External JS -->
+  <script src="checkout.js"></script>
+</body>
+</html>

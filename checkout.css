@@ -1,0 +1,350 @@
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: rgb(214, 212, 212);
+  margin: 0;
+  padding-top: 70px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo-img {
+      width: 120px;
+      filter: invert(100%);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: gray;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.icons i {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.icons i:hover {
+  color: gray;
+}
+
+/* SEARCH BAR */
+.search-box {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 300px;
+}
+
+#search-toggle {
+  display: none;
+}
+
+#search-toggle:checked ~ .search-box {
+  display: flex;
+}
+
+/* ========================================
+   LOGIN MODAL (MULTI-STEP)
+======================================== */
+.login-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+  transition: opacity 0.22s ease;
+}
+
+.login-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.login-box {
+  width: 420px;
+  max-width: 98%;
+  background: #fff;
+  color: #000;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  position: relative;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(20px) scale(0.97); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.checkout-container h3 {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #222;
+}
+/* === Checkout Section === */
+.checkout-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 2px solid #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout-container h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* === Form Groups === */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.8px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #222;
+}
+
+/* === Payment === */
+.payment-options label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card-info.hidden {
+  display: none;
+}
+
+/* === Map === */
+#map {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: 15px 0 20px;
+}
+
+/* === Order Summary === */
+.order-summary {
+  border-top: 2px solid #ddd;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.order-summary h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.order-summary .total {
+  font-weight: 600;
+  text-align: right;
+  font-size: 16px;
+  color: #111;
+}
+
+/* === Confirm Button === */
+.confirm-btn {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover {
+  background: #444;
+}
+
+/* === Thank You Animation === */
+.thank-you {
+  text-align: center;
+  padding: 40px;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 14px;
+  animation: popIn 0.5s ease forwards;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you.hidden {
+  display: none;
+}
+
+.thank-you h2 {
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.thank-you p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.thank-you button {
+  background: #111;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.thank-you button:hover {
+  background: #444;
+}
+
+/* === Pop animation === */
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === Confetti animation === */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff4d6d;
+  top: 0;
+  left: 50%;
+  animation: confettiFall 2.5s linear forwards;
+  border-radius: 2px;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .checkout-container {
+    margin: 30px 10px;
+    padding: 20px;
+  }
+
+  #map {
+    height: 250px;
+  }
+}

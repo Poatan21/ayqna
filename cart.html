@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Affectious Closet</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+ <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="cartstyle.css">
+</head>
+<body>
+ <!-- NAVBAR -->
+ <nav>
+  <img src="images/logoafeec.png" class="logo-img" alt="Affectious Logo">
+  <div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="#">Contact</a>
+</div>
+
+  <div class="icons">
+    <label for="search-toggle"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-toggle">
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+    </div>
+    <i class="fas fa-user" id="loginBtn"></i>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</nav>
+
+
+<!-- CART -->
+<div class="cart-container">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+  </div>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-footer">
+    <!-- Bottom left -->
+    <div class="footer-left">
+      <input type="checkbox" id="selectAll">
+      <label for="selectAll">Select All</label>
+      <button id="removeSelected" class="delete">Remove</button>
+    </div>
+
+    <!-- Bottom right -->
+    <div class="footer-right">
+      <div class="total">Total: ₱<span id="totalPrice">0.00</span></div>
+      <button id="checkout">Checkout</button>
+    </div>
+  </div>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

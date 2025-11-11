@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>About Us - Affectious Closet</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+ <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer" />
+ <style>
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   body {
+     font-family: "Poppins", sans-serif;
+     background-color: rgb(214, 212, 212);
+     color: #333;
+     line-height: 1.6;
+     padding-top: 70px;
+   }
+
+   /* NAVBAR */
+   nav {
+     background-color: black;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 40px;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 10;
+   }
+
+   .logo-img {
+      width: 120px;
+      filter: invert(100%);;
+   }
+
+   .nav-links {
+     display: flex;
+     gap: 25px;
+   }
+
+   .nav-links a {
+     color: white;
+     font-weight: 500;
+     text-decoration: none;
+     transition: 0.3s;
+   }
+
+   .nav-links a:hover {
+     color: gray;
+   }
+
+   .icons {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+   }
+
+   .icons i {
+     cursor: pointer;
+     font-size: 18px;
+     transition: 0.3s;
+   }
+
+   .icons a {
+     color: white;
+     text-decoration: none;
+   }
+
+   /* ABOUT SECTION */
+   section {
+     max-width: 1200px;
+     margin: 60px auto;
+     padding: 0 20px;
+     background: white;
+     border-radius: 10px;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   }
+
+   .about-header {
+     text-align: center;
+     padding: 50px 0 30px;
+   }
+
+   .about-header h1 {
+     font-size: 36px;
+     margin: 10px 0;
+   }
+
+   .about-content {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 40px;
+     padding: 20px;
+   }
+
+   .about-text {
+     flex: 1 1 500px;
+   }
+
+   .about-text h2 {
+     font-size: 30px;
+     margin-bottom: 10px;
+   }
+
+   .about-text h3 {
+     font-weight: 400;
+     color: #555;
+     font-size: 17px;
+     margin-bottom: 25px;
+   }
+
+   .about-text p {
+     color: #666;
+     margin-bottom: 20px;
+   }
+
+   .about-image {
+     flex: 1 1 400px;
+     text-align: center;
+   }
+
+   .about-image img {
+     width: 100%;
+     max-width: 450px;
+     border-radius: 12px;
+   }
+
+   /* TEAM SECTION - SINGLE ROW */
+   .team-section {
+     text-align: center;
+     padding: 60px 20px;
+   }
+
+   .team-section h1 {
+     font-size: 2.5em;
+     margin-bottom: 15px;
+   }
+
+   .team-section p {
+     color: #777;
+     max-width: 700px;
+     margin: 0 auto 50px;
+     line-height: 1.6;
+   }
+
+   .team-container {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     flex-wrap: nowrap;
+     overflow-x: auto;
+     padding: 20px 0;
+   }
+
+   .team-member {
+     background-color: #f9f9f9;
+     border-radius: 16px;
+     padding: 25px;
+     min-width: 220px;
+     max-width: 220px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .team-member:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .team-member img {
+     width: 100%;
+     height: 220px;
+     object-fit: cover;
+     border-radius: 14px;
+   }
+
+   .team-member h3 {
+     font-size: 1.1em;
+     margin-top: 15px;
+     margin-bottom: 6px;
+   }
+
+   .team-member h4 {
+     font-size: 0.9em;
+     color: #777;
+     margin-bottom: 10px;
+   }
+ </style>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+ <nav>
+   <img src="images/logoafeec.png" class="logo-img" alt="Affectious Logo">
+   <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a href="blog.html">Blog</a>
+     <a href="shop.html">Shop</a>
+     <a href="about.html">About</a>
+     <a href="#">Contact</a>
+   </div>
+   <div class="icons">
+     <i class="fas fa-search"></i>
+     <i class="fas fa-user" id="loginBtn"></i>
+     <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+   </div>
+ </nav>
+
+ <section>
+   <div class="about-header">
+     <h1>About Us</h1>
+   </div>
+
+   <div class="about-content">
+     <div class="about-text">
+       <h2>AFEEC Clothing</h2>
+       <h3>Welcome to AFEEC Clothing — a fashion brand built for individuals who embrace creativity, confidence, and authenticity. At AFEEC, we believe that fashion is more than just what you wear; it is a reflection of identity and self-expression. Our mission is to design and share apparel that empowers people to express their true selves with pride and individuality.</h3>
+       <p>Founded on the values of unity, creativity, and teamwork, AFEEC Clothing was established to provide a space where alternative fashion enthusiasts can feel seen and represented. Our logo, crafted from the initials of our founders' surnames, symbolizes the strength that comes from diversity — a reminder that unique styles and personalities can come together to create something truly meaningful.</p>
+       <p>We were inspired by the realization that many fashion platforms often overlook alternative styles, focusing mainly on mainstream trends. AFEEC Clothing seeks to fill that gap by offering bold, unconventional pieces that celebrate difference and creativity.</p>
+       <p>More than just a clothing brand, AFEEC is a community — a place where individuals can connect, support one another, and express their passion for alternative fashion. As we continue to grow, we remain committed to fostering a culture of acceptance and self-expression, helping everyone feel confident in who they are and what they wear.</p>
+       <p>Welcome to AFEEC Clothing, where fashion meets individuality.</p>
+     </div>
+
+     <div class="about-image">
+       <img src="images/logoafeec.png" alt="AFEEC Clothing">
+     </div>
+   </div>
+ </section>
+
+ <section class="team-section">
+   <h1>Meet Our Team</h1>
+   <p>
+     Meet the passionate team that brought this website to life — the creative minds who make everything you see possible. Guided by our belief that fashion should be comfortable, expressive, and accessible for everyone, we design each collection to inspire confidence and spark creativity in your everyday style.
+   </p>
+
+   <div class="team-container">
+     <div class="team-member">
+       <img src="images/hannah.jpg" alt="Hannah">
+       <h3>ALJECERA, HANNAH DULCET L.</h3>
+       <h4>Creative Assistant</h4>
+     </div>
+
+     <div class="team-member">
+       <img src="images/mark.jpg" alt="Mark">
+       <h3>CONCEPCION, MARK JAIRUZ</h3>
+       <h4>Assistant Programmer</h4>
+     </div>
+
+     <div class="team-member">
+       <img src="images/Rusvi.jpg" alt="Rusvirian">
+       <h3>EDEJER, RUSVIRIAN CLAIR M.</h3>
+       <h4>Creative Director</h4>
+     </div>
+
+     <div class="team-member">
+       <img src="images/leira.jpg" alt="Leira">
+       <h3>EVANGELISTA, LEIRA FAYE J.</h3>
+       <h4>Lead Developer</h4>
+     </div>
+
+     <div class="team-member">
+       <img src="images/lem.jpg" alt="Lem">
+       <h3>FRANCO, LEEMUELSAM C.</h3>
+       <h4>Assistant Lead Developer</h4>
+     </div>
+   </div>
+ </section>
+
+</body>
+</html>

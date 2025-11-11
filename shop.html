@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affectious Closet</title>
+
+  <!-- Font Awesome -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="shopstyle.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <img src="images/logoafeec.png" alt="Affectious Closet Logo" class="logo-img">
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-search"></i>
+        <a href="#login-modal"><i class="fas fa-user"></i></a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+</nav>
+
+  <!-- Login Modal -->
+           <a href="#login-modal"><i class="fas fa-user"></i></a>
+      <div class="login-modal" id="login-modal">
+    <div class="login-box">
+
+<h1><span style="color: black;">Login</span></h1>
+      <div class="links">
+      <form>
+<input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <a href="forgot.html">Forgot Password?</a>
+        <a href="signup.html">Create Account</a>
+
+        <button type="submit" class="btn">Login</button>
+        <a href="#" class="close-btn">Close</a>
+      </form>
+    </div>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+  <h2 class="section-title">Just For You</h2>
+
+  <!-- Category Filter -->
+  <div class="category-bar">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="tshirt">T-shirts</button>
+    <button class="category-btn" data-category="hoodie">Hoodies</button>
+    <button class="category-btn" data-category="croptop">Croptop</button>
+    <button class="category-btn" data-category="hat">Hats</button>
+    <button class="category-btn" data-category="socks">Socks</button>
+    <button class="category-btn" data-category="shoes">Shoes</button>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button onclick="searchProducts()">Search</button>
+  </div>
+
+   <!-- PRODUCT GRID -->
+  <div class="product-grid">
+
+    <!-- HOODIE -->
+    <div class="product-card" data-category="hoodie">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECHoodie.png?raw=true" alt="AFEEC Signature Hoodie">
+      <h3 class="product-title">AFEEC Signature Hoodie</h3>
+      <p class="product-price">₱1,500</p>
+      <p class="product-stock">In stock: 15 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+      <div class="product-card" data-category="hoodie">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/FallenGraceHoodie.png?raw=true" alt="Fallen Grace Hoodie">
+      <h3 class="product-title">Fallen Grace Hoodie</h3>
+      <p class="product-price">₱1,500</p>
+      <p class="product-stock">In stock: 20 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+      <div class="product-card" data-category="hoodie">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/PunkcatGavishHoodie.png?raw=true" alt="">
+      <h3 class="product-title">Punkcat Gavish Hoodie</h3>
+      <p class="product-price">₱1,500</p>
+      <p class="product-stock">In stock: 15 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+      <div class="product-card" data-category="hoodie">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/LateCallHoodie.png?raw=true" alt="">
+      <h3 class="product-title">Late Call Hoodie</h3>
+      <p class="product-price">₱1,500</p>
+      <p class="product-stock">In stock: 15 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+
+    <!-- T-SHIRT -->
+    <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxCapybaraTee.jpg?raw=true" alt="AFEECxCapybara Tee">
+      <h3 class="product-title">AFEECxCapybara Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/BustedTee.png?raw=true" alt="Busted Tee">
+      <h3 class="product-title">Busted Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+        <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/ChaosHeartTee.png?raw=true" alt="Chaos Heart Tee">
+      <h3 class="product-title">Chaos Heart Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+        <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/DeepReachTee.png?raw=true" alt="Deep Reach Tee">
+      <h3 class="product-title">Deep Reach Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+        <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/GothicFamiliarTee.png?raw=true" alt="Gothic Familiar Tee">
+      <h3 class="product-title">Gothic Familiar Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+          <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/HollowReignTee.png?raw=true" alt="Hollow Reign Tee">
+      <h3 class="product-title">Hollow Reign Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+          <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/SeraphDecayTee.png?raw=true" alt="Seraph Decay Tee">
+      <h3 class="product-title">Seraph Decay Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+          <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxSpidermanTee.png?raw=true" alt="AFEECxSpiderman Tee">
+      <h3 class="product-title">AFEECxSpiderman Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+          <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/StreetCatsTee.png?raw=true" alt="Street Cats Tee">
+      <h3 class="product-title">Street Cats Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+          <div class="product-card" data-category="tshirt">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/StreetKingTee.png?raw=true" alt="Street King Tee">
+      <h3 class="product-title">Street King Tee</h3>
+      <p class="product-price">₱899</p>
+      <p class="product-stock">In stock: 25 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- HAT -->
+    <div class="product-card" data-category="hat">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/steampunk1.png?raw=true" alt="Steam Punk">
+      <h3 class="product-title">Steam Punk</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="hat">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/woolen1.png?raw=true" alt="Woolen">
+      <h3 class="product-title">Woolen</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+        <div class="product-card" data-category="hat">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/punkcat1.png?raw=true" alt=" Punk Cat">
+      <h3 class="product-title"> Punk Cat</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+        <div class="product-card" data-category="hat">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/beret1.png?raw=true" alt="Beret">
+      <h3 class="product-title">Beret</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+            <div class="product-card" data-category="hat">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/batwingbucklehat1.png?raw=true" alt="Batwing Buckle Hat">
+      <h3 class="product-title">Batwing Buckle Hat</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+<!-- SHOES -->
+            <div class="product-card" data-category="shoes">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxCruxNoir-shoes.png?raw=true" alt="AFEECxCruxNoir">
+      <h3 class="product-title">AFEECxCruxNoir</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+            <div class="product-card" data-category="shoes">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxCloudWalker-shoes.png?raw=true" alt="AFEECxCloud Walker">
+      <h3 class="product-title">AFEECxCloud Walker</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+            <div class="product-card" data-category="shoes">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxPhantom-shoes.png?raw=true" alt="AFEECxPhantom">
+      <h3 class="product-title">AFEECxPhantom</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+            <div class="product-card" data-category="shoes">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxRegalia-shoes.png?raw=true" alt="AFEECxRegalia">
+      <h3 class="product-title">AFEECxRegalia</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+            <div class="product-card" data-category="shoes">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/AFEECxVelocity-shoes.png?raw=true" alt="AFEECxVelocity">
+      <h3 class="product-title">AFEECxVelocity</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- CROPTOP -->
+                <div class="product-card" data-category="croptop">
+      <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/StreetDripCropTee.png?raw=true" alt="Street Drip Crop Tee">
+      <h3 class="product-title">Street Drip Crop Tee</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+
+<!-- SOCKS -->
+              <div class="product-card" data-category="socks">
+      <img src="" alt="">
+      <h3 class="product-title">AFEEC Classic Cap</h3>
+      <p class="product-price">₱499</p>
+      <p class="product-stock">In stock: 10 pcs</p>
+      <div class="product-buttons">
+        <button class="add-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+
+    <div class="modal-body">
+      <!-- LEFT: IMAGES -->
+      <div class="modal-images">
+        <button class="arrow-box left">&#10094;</button>
+        <img id="modalImage" src="" alt="Product Image">
+        <button class="arrow-box right">&#10095;</button>
+      </div>
+
+      <!-- RIGHT: INFO -->
+  <div class="modal-info">
+        <img src="https://github.com/Poatan21/AFEEC_Group6/blob/d57ef18c66ba7dbcae7673c8499169db12865616/images/logoafeec.png?raw=true" alt="Affectious Closet Logo" class="modal-logo">
+
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalPrice"></p>
+        <p id="modalStock"></p>
+        <p id="modalDesc"></p>
+
+        <!-- SIZE BUTTONS -->
+        <div id="sizeButtons" class="size-buttons"></div>
+
+        <!-- BUTTONS -->
+        <div class="modal-buttons">
+          <button id="modalAddToCart" class="add-cart-btn">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+          <button id="modalBuyNow" class="buy-now-btn">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

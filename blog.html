@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Blog - Affectious Closet</title>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <style>
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   body {
+     font-family: "Poppins", sans-serif;
+     background-color: #f9fafc;
+     color: #222;
+     padding-top: 70px;
+   }
+
+   nav {
+     background-color: black;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 40px;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 10;
+   }
+
+ .logo-img {
+      width: 120px;
+      filter: invert(100%);
+   }
+
+   .nav-links {
+     display: flex;
+     gap: 25px;
+   }
+
+   .nav-links a {
+     color: white;
+     font-weight: 500;
+     text-decoration: none;
+     transition: 0.3s;
+   }
+
+   .nav-links a:hover {
+     color: gray;
+   }
+
+   .icons {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+   }
+
+   .icons i {
+     cursor: pointer;
+     font-size: 18px;
+     transition: 0.3s;
+   }
+
+   .icons a {
+     color: white;
+     text-decoration: none;
+   }
+
+   section {
+     padding: 80px 5%;
+     text-align: center;
+   }
+
+   h2 {
+     font-size: 2.2rem;
+     font-weight: 700;
+     color: #1b1b1b;
+     margin-bottom: 12px;
+   }
+
+   p.subtitle {
+     color: #777;
+     font-size: 1rem;
+     margin-bottom: 50px;
+   }
+
+   .posts-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+     gap: 30px;
+     justify-content: center;
+   }
+
+   .card {
+     background: #fff;
+     border-radius: 14px;
+     overflow: hidden;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+     display: flex;
+     flex-direction: column;
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+   }
+
+   .card:hover {
+     transform: translateY(-6px);
+     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+   }
+
+   .card-img {
+     width: 100%;
+     height: 220px;
+     background-size: cover;
+     background-position: center;
+     position: relative;
+   }
+
+   .badge {
+     position: absolute;
+     top: 14px;
+     left: 14px;
+     color: #fff;
+     font-weight: 600;
+     font-size: 12px;
+     padding: 6px 12px;
+     border-radius: 999px;
+     z-index: 3;
+     letter-spacing: 0.5px;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+   }
+
+   .badge.collabdrop { background-color: #303030; }
+   .badge.brand { background-color: #B0B0B0; }
+   .badge.style { background-color: #606060; }
+   .badge.lifestyle { background-color: #383838; }
+   .badge.sustainability { background-color: #BEBEBE; }
+   .badge.seasonal { background-color: #404040; }
+
+   .card-content {
+     padding: 24px;
+     text-align: left;
+     flex-grow: 1;
+   }
+
+   .card h3 {
+     font-size: 1.15rem;
+     color: #1a1a1a;
+     margin-bottom: 10px;
+     line-height: 1.4;
+   }
+
+   .card p {
+     color: #666;
+     font-size: 0.95rem;
+     margin-bottom: 18px;
+   }
+
+   .meta {
+     font-size: 0.85rem;
+     color: #999;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 10px;
+   }
+
+   .continue-btn {
+     display: inline-block;
+     background: black;
+     color: white;
+     font-size: 0.85rem;
+     font-weight: 600;
+     padding: 10px 22px;
+     border-radius: 8px;
+     text-decoration: none;
+     transition: background 0.25s ease;
+   }
+
+   .continue-btn:hover {
+     background: #333;
+   }
+ </style>
+</head>
+<body>
+
+ <nav>
+   <img src="images/logoafeec.png" class="logo-img" alt="Affectious Logo">
+   <div class="nav-links">
+     <a href="index.html">Home</a>
+     <a href="blog.html">Blog</a>
+     <a href="shop.html">Shop</a>
+     <a href="about.html">About</a>
+     <a href="#">Contact</a>
+   </div>
+   <div class="icons">
+     <i class="fas fa-search"></i>
+     <i class="fas fa-user" id="loginBtn"></i>
+     <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+   </div>
+ </nav>
+
+ <section>
+   <h2>FEATURED POSTS</h2>
+   <p class="subtitle">From underground trends to exclusive releases, explore how we're pushing the limits of alternative and streetwear culture.</p>
+
+   <div class="posts-container">
+     
+     <div class="card">
+       <div class="card-img" style="background-image:url('AFEECxSpidermanTee.png');">
+         <span class="badge collabdrop">COLLAB DROP</span>
+       </div>
+       <div class="card-content">
+         <h3>AFEEC x Spiderman: Webbed Reality Tee — Streetwear Meets the Multiverse</h3>
+         <p>Step into the multiverse with the AFEEC x Spiderman Webbed Reality Tee, a piece that swings right between comic nostalgia and modern street style.</p>
+         <div class="meta">
+           <span>5 min read</span>
+           <a href="spiderman.html" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea3c5b31?w=800');">
+         <span class="badge brand">BRAND</span>
+       </div>
+       <div class="card-content">
+         <h3>The Meaning Behind the Thread: What Streetwear Says About Identity</h3>
+         <p>Explore how streetwear has evolved from rebellion to self-expression, and how your brand reflects that voice.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800');">
+         <span class="badge style">STYLE</span>
+       </div>
+       <div class="card-content">
+         <h3>5 Ways to Style Oversized Tees Without Losing Your Edge</h3>
+         <p>A practical yet creative guide showing different looks using your pieces.</p>
+         <div class="meta">
+           <span>6 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800');">
+         <span class="badge lifestyle">LIFESTYLE</span>
+       </div>
+       <div class="card-content">
+         <h3>Alt Fashion in 2025: The Rebirth of Rebellion</h3>
+         <p>Explore current trends and how streetwear continues to challenge mainstream fashion.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800');">
+         <span class="badge sustainability">SUSTAINABILITY</span>
+       </div>
+       <div class="card-content">
+         <h3>Why We Choose Quality Over Quantity</h3>
+         <p>Educate your audience on fabric, craftsmanship, and why premium quality matters.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1483181957632-8bda974cbc91?w=800');">
+         <span class="badge seasonal">SEASONAL</span>
+       </div>
+       <div class="card-content">
+         <h3>Top Streetwear Trends to Watch This Year</h3>
+         <p>Position your brand as a thought leader by analyzing and forecasting alt fashion trends.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800');">
+         <span class="badge lifestyle">LIFESTYLE</span>
+       </div>
+       <div class="card-content">
+         <h3>Streetwear Isn't Just Clothes — It's a Movement</h3>
+         <p>A manifesto-style blog about authenticity, confidence, and belonging in the culture.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+     <div class="card">
+       <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800');">
+         <span class="badge brand">BRAND</span>
+       </div>
+       <div class="card-content">
+         <h3>From Sketch to Stitch: The Making of Our Signature Tee</h3>
+         <p>A visual journey through how one of your standout designs comes to life.</p>
+         <div class="meta">
+           <span>8 min read</span>
+           <a href="#" class="continue-btn">CONTINUE READING →</a>
+         </div>
+       </div>
+     </div>
+
+   </div>
+ </section>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFEEC - Modern Streetwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="images/logoafeec.png" alt="AFEEC Logo" class="logo-img">
+        
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="icons">
+            <label for="search-toggle"><i class="fas fa-search"></i></label>
+            <input type="checkbox" id="search-toggle">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+            <i class="fas fa-user" id="loginBtn"></i>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-box">
+            <h2>Login / Delivery Info</h2>
+
+            <!-- Step 1: Login -->
+            <form id="loginForm" class="form-step active" onsubmit="nextStep(event)">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn">Next</button>
+            </form>
+
+            <!-- Step 2: Verification -->
+            <form id="verifyForm" class="form-step" onsubmit="nextStep(event)">
+                <input type="text" id="verification" placeholder="Verification Code" required>
+                <button type="submit" class="btn">Next</button>
+            </form>
+
+            <!-- Step 3: Address -->
+            <form id="addressForm" class="form-step" onsubmit="finishLogin(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="contact" placeholder="Contact Number" pattern="[0-9]{11}" title="Enter 11-digit phone number" required>
+                <select id="region" required>
+                    <option value="">Select Region</option>
+                    <option value="NCR">NCR</option>
+                    <option value="Region IV-A">Region IV-A</option>
+                    <option value="Region III">Region III</option>
+                </select>
+                <input type="text" id="city" placeholder="City / Municipality" required>
+                <input type="text" id="barangay" placeholder="Barangay" required>
+                <input type="text" id="street" placeholder="Street / House No." required>
+                <button type="submit" class="btn">Finish</button>
+            </form>
+
+            <!-- Step 4: Welcome -->
+            <div id="welcomeStep" class="form-step">
+                <h3>Welcome to AFEEC!</h3>
+                <p>Thank you for logging in. Your information has been saved.</p>
+                <button class="btn" onclick="closeLogin()">Continue Shopping</button>
+            </div>
+
+            <a href="#" class="close-btn" id="closeModal">Close</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="content-section">
+        <div class="text-content">
+            <img src="images/logoafeec.png" class="hero-logo" alt="AFEEC">
+            <p>New Outfit for this Year</p>
+            <h1><span style="color: gray;">FRESH LOOK,</span> FRESH DEALS</h1>
+            <h4>Your Wardrobe's Glow-up Starts here - Up to 70% Off</h4>
+            <a href="shop.html"><button class="shop-btn">SHOP NOW</button></a>
+        </div>
+        <img src="images/featuredproduct.png" class="right-img" alt="Featured Product">
+    </section>
+
+    <!-- New Release Section -->
+    <h2 class="title">New Release</h2>
+    <section class="product-grid">
+        <div class="product-card">
+            <img src="images/skatersoul.png" alt="Skater Soul">
+            <h3>Skater Soul Tee</h3>
+            <p class="price">₱599.00</p>
+        </div>
+        <div class="product-card">
+            <img src="images/chaosclowntee.png" alt="Chaos Clown">
+            <h3>Chaos Clown Tee</h3>
+            <p class="price">₱599.00</p>
+        </div>
+        <div class="product-card">
+            <img src="images/ashfadebite.jpg" alt="Ash Fade">
+            <h3>Ash Fade Bite</h3>
+            <p class="price">₱599.00</p>
+        </div>
+        <div class="product-card">
+            <img src="images/skatercrewcrop.png" alt="Skater Crew">
+            <h3>Skater Crew Crop</h3>
+            <p class="price">₱499.00</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>Welcome to <strong>AFEEC</strong></h2>
+        <p>— your go-to destination for modern streetwear and stylish apparel.</p>
+        <p>We believe fashion should be comfortable, expressive, and accessible for everyone. Every collection we design is made to bring confidence and creativity to your everyday look.</p>
+        <p>From trendy tops to timeless accessories, <strong>AFEEC</strong> represents individuality, passion, and the love for bold fashion. Be part of our growing community and wear your story with pride.</p>
+        <div class="button-container">
+            <a href="about.html"><button class="cta-about">Learn More</button></a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="category-box">
+            <i class="fa-solid fa-shirt"></i>
+            <h3>Very Soft Fabric</h3>
+            <p>Made with smooth and comfy material that feels gentle on your skin.</p>
+        </div>
+        <div class="category-box">
+            <i class="fa-solid fa-scissors"></i>
+            <h3>Durable Quality</h3>
+            <p>Designed to last, Does not get dirty easily even after repeated use.</p>
+        </div>
+        <div class="category-box">
+            <i class="fa-solid fa-droplet"></i>
+            <h3>Skin-Friendly</h3>
+            <p>Safe and gentle for all skin types, perfect for everyday wear.</p>
+        </div>
+        <div class="category-box">
+            <i class="fa-solid fa-heart"></i>
+            <h3>Made with Care</h3>
+            <p>Each piece is crafted with love and attention to detail for your comfort.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-main">
+            <div class="footer-col footer-newsletter-col">
+                <h2>Newsletter</h2>
+                <p>Want to know what we're up to? Sign up for the newsletter and join our tribe.</p>
+                <form class="newsletter-form-inline">
+                    <input type="email" placeholder="Email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="footer-col footer-info-col">
+                <div class="info-section">
+                    <h3>Schedule</h3>
+                    <p><strong>Monday - Saturday</strong></p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+                <div class="info-section">
+                    <h3>Address</h3>
+                    <p>Technological Institute of the Philippines</p>
+                    <p>Quezon City</p>
+                </div>
+            </div>
+
+            <div class="footer-col footer-social-col">
+                <div class="info-section">
+                    <h3>Follow us</h3>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://x.com" target="_blank">X</a>
+                </div>
+                <div class="info-section">
+                    <h3>Contact</h3>
+                    <p>T: <a href="tel:+639123456790">+63 912 345 6790</a></p>
+                    <p>E: <a href="mailto:afeec@tip.edu.ph">afeec@tip.edu.ph</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2025 AFEEC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
