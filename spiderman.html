@@ -1,211 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Affectious Closet</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFEEC x Spiderman: Webbed Reality Tee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f9fafc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
+    .home-btn {
+      background: black;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
 
+    .home-btn:hover {
+      background: #0d47a1;
+      transform: translateY(-2px);
+    }
+    .hero {
+      position: relative;
+      background: url('AFEECxSpidermanTee.png') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      padding: 80px 10%;
+    }
 
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" 
-  />
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
 
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
 
+    .hero-tags {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css">
+    .tag {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 18px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .meta img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Content Section */
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 10%;
+      flex-wrap: wrap;
+    }
+
+    article {
+      flex: 1;
+      min-width: 300px;
+      max-width: 800px;
+    }
+
+    article h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+
+    article p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #1976d2;
+      padding-left: 16px;
+      color: #333;
+      margin: 30px 0;
+    }
+
+  </style>
 </head>
-
-
-
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <img src="images/images/logoafeec.png" class="logo-img" alt="Affectious Logo">
-    <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="blog.html">Blog</a>
-  <a href="shop.html">Shop</a>
-  <a href="about.html">About</a>
-  <a href="#">Contact</a>
-</div>
+<header>
+    <a href="blog.html" class="home-btn">← Home</a>
+  </header>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tags">
+        <span class="tag">Collab Drop</span>
+      </div>
+      <h1>AFEEC x Spiderman: Webbed Reality Tee — Where Streetwear Meets the Multiverse</h1>
+      <p>Step into the multiverse with the AFEEC x Spiderman collab tee — a bold fusion of comic energy and underground fashion attitude.</p>
+      <div class="meta">
+        <span>March 10, 2025</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- MAIN CONTENT -->
+  <div class="content-wrapper">
+    <article>
+      <h2>Bridging Universes Through Style</h2>
+      <p>The AFEEC x Spiderman Webbed Reality Tee is more than just a collaboration — it’s a statement. Inspired by Spiderman’s iconic web patterns, this piece reimagines superhero energy through a streetwear lens, embracing the chaos, movement, and confidence of life in the multiverse.</p>
 
+      <p>Designed for those who live boldly and think creatively, the tee merges AFEEC’s distinctive minimal logo work with explosive comic-inspired visuals. Every detail — from the distressed texture to the dynamic composition — pays tribute to both Spiderman’s agility and AFEEC’s underground fashion ethos.</p>
 
+      <h2>The Design Concept</h2>
+      <p>The “Webbed Reality” concept was born from the idea that fashion can connect different worlds — pop culture, urban identity, and creative rebellion. The design team took inspiration from Spiderman’s duality — the everyday person and the masked hero — and expressed it through layered visuals and a gritty, monochromatic palette accented with crimson webbing.</p>
 
-    <div class="icons">
-      <label for="search-toggle"><i class="fas fa-search"></i></label>
-      <input type="checkbox" id="search-toggle">
-      <div class="search-box">
-        <input type="text" placeholder="Search...">
-      </div>
-      <!-- Login Trigger -->
-      <i class="fas fa-user" id="loginBtn"></i>
+      <blockquote>
+        “This collaboration symbolizes the idea that anyone can wear confidence like a suit — because in our world, streetwear is the new superhero armor.”
+      </blockquote>
 
+      <h2>Material & Fit</h2>
+      <p>Crafted with 100% premium cotton, the tee offers a relaxed fit that balances comfort and style. The slightly oversized silhouette fits perfectly into modern streetwear culture while staying breathable and easy to layer.</p>
 
+      <h2>Limited Drop</h2>
+      <p>Each piece from the AFEEC x Spiderman capsule is part of a limited release. Once sold out, it’s gone for good — making every shirt a wearable collector’s item. The Webbed Reality Tee embodies individuality, creativity, and the power of self-expression in true AFEEC fashion.</p>
 
-       <a href="cart.html">
-      <i class="fas fa-shopping-cart"></i>
-       </a>
-    </div>
-  </nav>
+      <p>Available now exclusively at <strong>AFEEC Official Store</strong> — because in this universe, style has no limits.</p>
+    </article>
 
-
-
-  <!-- LOGIN MODAL -->
-  <div class="login-modal" id="loginModal">
-    <div class="login-box">
-      <h2>Login / Delivery Info</h2>
-
-
-
-      <!-- Step 1: Login -->
-      <form id="loginForm" class="form-step active" onsubmit="nextStep(event)">
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit" class="btn">Next</button>
-      </form>
-
-
-
-      <!-- Step 2: Verification -->
-      <form id="verifyForm" class="form-step" onsubmit="nextStep(event)">
-        <input type="text" id="verification" placeholder="Verification Code" required>
-        <button type="submit" class="btn">Next</button>
-      </form>
-
-
-
-      <!-- Step 3: Address -->
-      <form id="addressForm" class="form-step" onsubmit="finishLogin(event)">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="text" id="contact" placeholder="Contact Number" pattern="[0-9]{11}" title="Enter 11-digit phone number" required>
-        <select id="region" required>
-          <option value="">Select Region</option>
-          <option value="NCR">NCR</option>
-          <option value="Region IV-A">Region IV-A</option>
-          <option value="Region III">Region III</option>
-        </select>
-        <input type="text" id="city" placeholder="City / Municipality" required>
-        <input type="text" id="barangay" placeholder="Barangay" required>
-        <input type="text" id="street" placeholder="Street / House No." required>
-        <button type="submit" class="btn">Finish</button>
-      </form>
-
-
-
-      <!-- Step 4: Welcome -->
-      <div id="welcomeStep" class="form-step">
-        <h3>Welcome to AFEEC!</h3>
-        <p>Thank you for logging in. Your information has been saved.</p>
-        <button class="btn" onclick="closeLogin()">Continue Shopping</button>
-      </div>
-
-
-
-      <a href="#" class="close-btn" id="closeModal">Close</a>
-    </div>
-  </div>
-
-
-
-  <!-- HERO / LANDING -->
-  <div class="content-section">
-    <div class="text">
-      <img src="images/images/logoafeec.png" alt="AFEEC Logo">
-      <p>New Outfit for this Year</p>
-      <h1><span style="color: grey;">FRESH LOOK, </span>FRESH DEALS</h1>
-      <h4>Your Wardrobe's Glow-up Starts Here - Up to 70% Off</h4><br>
-      <button class="shop-btn">SHOP NOW</button>
-      <img src="images/featuredproduct.png" class="right-img" alt="Featured Product">  
-    </div>
-  </div>
-
-
-
-  <!-- PRODUCTS -->
-  <h4 class="title">New Release</h4>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/skatersoul.png" alt="T-Shirt">
-      <h3 class="title">Skater Soul Graphic Tee</h3>
-      <h5>Black cotton t-shirt with a large white print of a skater holding a skateboard.</h5>
-      <p class="price">₱699.00</p>
-    </div>
-    <div class="product-card">
-      <img src="images/chaosclowntee.png" alt="Hoodie">
-      <h3 class="title">Chaos Clown Tee</h3>
-      <h5>Black cotton t-shirt featuring a red and white graphic of a clown face.</h5>
-      <p class="price">₱599.00</p>
-    </div>
-    <div class="product-card">
-      <img src="images/ashfadebite.jpg" alt="Pants">
-      <h3 class="title">Ashfade Bite Tee</h3>
-      <h5>Beige cotton t-shirt with a black print showing an open mouth and sharp teeth.</h5>
-      <p class="price">₱599.00</p>
-    </div>
-    <div class="product-card">
-      <img src="images/skatercrewcrop.png" alt="Shoes">
-      <h3 class="title">Skater Crew Crop Tee</h3>
-      <h5>Black cropped t-shirt with a white graphic of multiple skater heads.</h5>
-      <p class="price">₱499.00</p>
-    </div>
-  </div>
-
-
-
-  <!-- ABOUT -->
-  <h4 class="title">About Us</h4><br>
-  <section class="about-section">
-    <p>
-      Welcome to <b>AFEEC</b> — your go-to destination for modern streetwear and stylish apparel.  
-      We believe fashion should be comfortable, expressive, and accessible for everyone.
-    </p>
-    <p>
-      Every collection we design is made to bring confidence and creativity to your everyday look.  
-      Be part of our growing community and wear your story with pride.
-    </p>
-    <div class="button-container">
-      <button class="cta-about">Learn More</button>
-    </div>
-  </section>
-
-
-
-  <!-- CATEGORIES -->
-  <section class="categories">
-    <div class="category-box">
-      <i class="fa-solid fa-shirt"></i>
-      <h3>Very Soft Fabric</h3>
-      <p>Made with smooth and comfy material that feels gentle on your skin.</p>
-    </div>
-    <div class="category-box">
-      <i class="fa-solid fa-scissors"></i>
-      <h3>Durable Quality</h3>
-      <p>Designed to last, even after repeated use.</p>
-    </div>
-    <div class="category-box">
-      <i class="fa-solid fa-wind"></i>
-      <h3>Skin-Friendly</h3>
-      <p>Safe and gentle for all skin types, perfect for everyday wear.</p>
-    </div>
-    <div class="category-box">
-      <i class="fa-solid fa-heart"></i>
-      <h3>Made with Care</h3>
-      <p>Each piece is crafted with love and attention to detail.</p>
-    </div>
-  </section>
-
-
-
-  <!-- JS -->
-  <script src="homescript.js"></script>
 </body>
 </html>
+
