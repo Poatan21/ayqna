@@ -76,10 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => confetti.remove(), 3000);
     }
 
-    setTimeout(() => {
-      localStorage.removeItem("selectedCart");
-      window.location.href = "shop.html";
-    }, 5000);
+    // Auto-redirect removed - user must click "Back to Shop" button manually
+    localStorage.removeItem("selectedCart");
   });
 
   function createReceipt(formData, orderNumber) {
@@ -144,5 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
     thankYou.insertAdjacentHTML('beforebegin', receiptHTML);
+  }
+
+  // Handle "Back to Shop" button click
+  const backToShopBtn = document.getElementById('backToShopBtn');
+  if (backToShopBtn) {
+    backToShopBtn.addEventListener('click', () => {
+      window.location.href = 'shop.html';
+    });
   }
 });
